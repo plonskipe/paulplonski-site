@@ -31,7 +31,7 @@ export default {
 
   // Public GitHub repo URL, e.g. "https://github.com/<user>/paulplonski-site".
   // Footer links to it once set.
-  repoUrl: "",
+  repoUrl: "https://github.com/plonskipe/paulplonski-site",
 
   // Cloudflare Web Analytics token (dashboard > Analytics & Logs > Web Analytics).
   // Leave empty to load no analytics script.

@@ -11,7 +11,7 @@ ai:
   level: paul
   tool: Claude Opus 5.5
   sources: "Paul's own statements about his teaching and research, and his CV"
-  reviewed: 10-02-2026
+  reviewed: 2026-10-02
   note: 
 ---
 

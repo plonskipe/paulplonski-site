@@ -11,7 +11,7 @@ ai:
   level: drafted
   tool: Claude Opus 5.5
   sources: "Paul's teaching statement and the lab manual link he provided"
-  reviewed: 10-01-2026
+  reviewed: 2026-10-01
 ---
 
 # Resources

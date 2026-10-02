@@ -6,7 +6,7 @@ ai:
   level: drafted
   tool: Claude Opus 5.5
   sources: "Paul's direction and his AI-use statements"
-  reviewed:
+  reviewed: 2026-10-02
 ---
 {# Paul: this is the page where your own words matter most. Rewrite freely, then set `ai.level`
    to match what you did (paul, edited, or drafted) before setting `reviewed`. #}

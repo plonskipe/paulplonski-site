@@ -11,8 +11,8 @@
 
   // Preview URL: https://paulplonski-site.<your-account-subdomain>.workers.dev
   // Turn this off (false) once paulplonski.com is working, so there's one public address.
-  "workers_dev": true
-
+  "workers_dev": true,
+  "routes": [{ "pattern": "paulplonski.com", "custom_domain": true }]
   // STEP 2 in TODAY.md: after deleting the old Squarespace A records for paulplonski.com,
   // replace the line above with the two lines below (note the comma after true), then
   // run `npm run deploy` again. Cloudflare creates the DNS record and certificate itself.

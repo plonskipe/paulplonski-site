@@ -11,7 +11,7 @@ ai:
   level: edited
   tool: Claude Opus 5.5
   sources: "Paul's earlier website, research statement, and CV"
-  reviewed: 10-01-2026
+  reviewed: 2026-10-01
 ---
 
 # Research

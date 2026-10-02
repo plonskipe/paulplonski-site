@@ -1,0 +1,45 @@
+---
+title: Publications
+description: Peer-reviewed articles and book chapters by Paul E. Plonski.
+updated: 2026-10-01
+accent:
+  image: pond
+  position: strip
+  alt: "A small pond edged with boulders and evergreens, with fall color on the hillside behind it."
+  caption: ""   # optional: place and season
+ai:
+  level: compiled
+  tool: Claude Opus 5.5
+  sources: "Paul's CV (July 2026)"
+  reviewed: 2026-10-01
+  note: "Citations follow APA 7 style; DOIs appear where available."
+---
+{%- macro endPunct(title) -%}
+{%- if not (title.endsWith("?") or title.endsWith("!")) %}.{% endif -%}
+{%- endmacro -%}
+
+<h1>Publications</h1>
+
+<p class="pubs-note"><a href="{{ site.links.scholar }}">Google Scholar</a> may have the most current list. If you can't access an article, please <a href="mailto:{{ site.email.primary or site.email.institutional }}">email me</a>.</p>
+
+<h2>Peer-reviewed articles</h2>
+<ul class="pubs">
+{%- for p in publications.articles %}
+  <li>{{ p.authors | authors | safe }} ({{ p.year }}). {{ p.title }}{{ endPunct(p.title) }} <em>{{ p.journal }}</em>
+    {%- if p.volume %}, <em>{{ p.volume }}</em>{% endif %}
+    {%- if p.issue %}({{ p.issue }}){% endif %}
+    {%- if p.article %}, Article {{ p.article }}{% endif %}
+    {%- if p.pages %}, {{ p.pages }}{% endif %}.
+    {%- if p.doi %} <span class="doi"><a href="https://doi.org/{{ p.doi }}">https://doi.org/{{ p.doi }}</a></span>{% endif %}</li>
+{%- endfor %}
+</ul>
+
+<h2>Book chapters</h2>
+<ul class="pubs">
+{%- for p in publications.chapters %}
+  <li>{{ p.authors | authors | safe }} ({{ p.year }}). {{ p.title }}{{ endPunct(p.title) }} In {{ p.editors }}, <em>{{ p.book }}</em> (pp. {{ p.pages }}). {{ p.publisher }}.
+    {%- if p.doi %} <span class="doi"><a href="https://doi.org/{{ p.doi }}">https://doi.org/{{ p.doi }}</a></span>{% endif %}</li>
+{%- endfor %}
+</ul>
+
+<p class="pubs-note">For talks, posters, and manuscripts in progress, see my <a href="{{ site.links.cv }}">CV (PDF)</a>.</p>

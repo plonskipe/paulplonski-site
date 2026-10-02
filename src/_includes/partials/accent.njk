@@ -1,0 +1,27 @@
+{#- Accent photo, set per page in frontmatter. Photos are Paul's own, processed by
+    _working/tools/process_photos.py (crops, resizes, drops camera and GPS metadata).
+
+    accent:
+      image: pond           # base name in /assets/img/nature/
+      position: strip       # side = small photo beside the opening text; strip = thin band at page end
+      alt: "Describe the photo for someone who can't see it."
+      caption: ""           # optional, e.g. place and season
+
+    Files expected:  side  -> <image>-side-600 / -1200   (4:5)
+                     strip -> <image>-strip-900 / -1800  (4:1)
+-#}
+{%- set kind = "side" if accent.position == "side" else "strip" %}
+{%- set base = "/assets/img/nature/" + accent.image + "-" + kind %}
+{%- set w1 = 600 if kind == "side" else 900 %}
+{%- set w2 = 1200 if kind == "side" else 1800 %}
+{%- set h1 = 750 if kind == "side" else 225 %}
+{%- set sizes = "(max-width: 40rem) 100vw, 13rem" if kind == "side" else "(max-width: 54rem) 100vw, 54rem" %}
+<figure class="accent accent--{{ kind }}">
+  <picture>
+    <source type="image/webp" srcset="{{ base }}-{{ w1 }}.webp {{ w1 }}w, {{ base }}-{{ w2 }}.webp {{ w2 }}w" sizes="{{ sizes }}">
+    <img src="{{ base }}-{{ w1 }}.jpg" srcset="{{ base }}-{{ w1 }}.jpg {{ w1 }}w, {{ base }}-{{ w2 }}.jpg {{ w2 }}w" sizes="{{ sizes }}" width="{{ w1 }}" height="{{ h1 }}" alt="{{ accent.alt }}" loading="lazy" decoding="async">
+  </picture>
+  {%- if accent.caption %}
+  <figcaption>{{ accent.caption }}</figcaption>
+  {%- endif %}
+</figure>

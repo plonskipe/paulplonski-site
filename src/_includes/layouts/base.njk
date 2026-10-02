@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title and page.url != "/" %}{{ title }} · {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta name="color-scheme" content="only light">
+  <meta name="theme-color" content="#2e5e5a">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/noto-sans/noto-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <meta property="og:type" content="{% if page.url == '/' %}profile{% else %}website{% endif %}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ title if title and page.url != '/' else site.name }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/img/paul-plonski-social.jpg">
+  <meta property="og:image:alt" content="Portrait of Paul E. Plonski">
+  <meta property="og:locale" content="{{ site.locale }}">
+  <meta name="twitter:card" content="summary">
+
+  {%- if page.url == "/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}/",
+    "image": "{{ site.url }}/assets/img/paul-plonski-960.jpg",
+    "jobTitle": "{{ site.position }}",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "{{ site.institution }}" },
+    "sameAs": ["{{ site.links.orcid }}", "{{ site.links.scholar }}", "{{ site.links.osf }}"]
+  }
+  </script>
+  {%- endif %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>{{ site.name }}</a>
+      <nav aria-label="Main">
+        <ul class="nav">
+          {%- for item in site.nav %}
+          <li><a href="{{ item.url }}"{% if item.url != "/" and page.url.startsWith(item.url) %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  {%- if not aiExempt and not ai.reviewed %}
+  <div class="draft-banner" role="note">
+    <div class="wrap">Draft, not yet reviewed by Paul. This page is left out of the production build until <code>ai.reviewed</code> has a date.</div>
+  </div>
+  {%- endif %}
+
+  <main id="main" class="wrap{% if wide %} wrap--wide{% endif %}">
+    {%- if accent and accent.position == "side" %}{% include "partials/accent.njk" %}{% endif %}
+    {{ content | safe }}
+    {%- if accent and accent.position != "side" %}{% include "partials/accent.njk" %}{% endif %}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+  {%- if site.analyticsToken %}
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.analyticsToken }}"}'></script>
+  {%- endif %}
+</body>
+</html>

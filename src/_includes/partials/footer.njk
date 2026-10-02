@@ -1,0 +1,22 @@
+{#- Site footer: this page's AI note, contact, license. -#}
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    {% include "partials/ai-note.njk" %}
+    <p>
+      {{ site.name }} · {{ site.department }}, {{ site.institution }}<br>
+      {%- if site.email.primary %}
+      <a href="mailto:{{ site.email.primary }}">{{ site.email.primary }}</a> ·
+      {%- endif %}
+      <a href="mailto:{{ site.email.institutional }}">{{ site.email.institutional }}</a>
+    </p>
+    <p class="site-footer__small">
+      © {{ site.year }} {{ site.name }}. Text licensed
+      <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>
+      (excluding CV); images licensed
+      <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license">CC BY-NC 4.0</a>
+      (excluding headshot); code licensed MIT.
+      <a href="/about-this-site/">About this site</a>.
+      {%- if site.repoUrl %} <a href="{{ site.repoUrl }}">Source on GitHub</a>.{% endif %}
+    </p>
+  </div>
+</footer>

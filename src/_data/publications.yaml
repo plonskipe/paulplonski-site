@@ -1,0 +1,109 @@
+# Publications, transcribed by Claude (Opus 5.5) from Paul's CV ("Updated July 2026"), 2026-10-01.
+# Paul: please check every line against the CV before setting `reviewed` on the Publications page.
+#
+# Normalizations from the CV text (APA 7):
+#   - "&" before the last author where the CV had "and" or nothing
+#   - page ranges with an en dash
+#   - "PLOS ONE" (CV: "PloS one")
+#   - Röseler et al. (2024): removed the duplicated title in the CV entry
+#   - Silverstein et al. (2024): CV "9:2" written as volume 9, Article 2
+#
+# DOIs: only the four listed on the CV are filled in. The rest are blank on purpose;
+# fill them in after checking each one at https://doi.org/ (never from memory).
+#
+# Preprints and manuscripts in progress are on hold (decision Q28), so they aren't listed here.
+
+articles:
+  - authors: "Urry, H. L., Plonski, P. E., Patel, P., Cathern, M. D., Taylor, H. A., & Brunyé, T. T."
+    year: 2026
+    title: "Urgent, hurry up!!! Perceived time pressure affects fine motor performance via subjective distress in US adults"
+    journal: "Journal of Experimental Psychology: Human Perception and Performance"
+    doi: "10.1037/xhp0001386"
+
+  - authors: "Plonski, P. E., Patel, P., Ossenfort, K. L., Taylor, H. A., Brunyé, T. T., & Urry, H. L."
+    year: 2025
+    title: "How much time to figure out how to get where? Route planning and subjective stress under time pressure"
+    journal: "PLOS ONE"
+    volume: 20
+    issue: 1
+    article: "e0316382"
+    doi: "10.1371/journal.pone.0316382"
+
+  - authors: "Röseler, L., Kaiser, L., Doetsch, C., Klett, N., Seida, C., Schütz, A., … & Zhang, Y."
+    year: 2024
+    title: "The replication database: Documenting the replicability of psychological science"
+    journal: "Journal of Open Psychology Data"
+    volume: 12
+    issue: 1
+    doi: "10.5334/jopd.101"
+
+  - authors: "Bjork, J. M., Reisweber, J., Perrin, P. B., Plonski, P. E., & Dismuke-Greer, C. E."
+    year: 2024
+    title: "Neurocognitive function and medical care utilization in Veterans treated for substance use disorder"
+    journal: "Substance Abuse Treatment, Prevention, and Policy"
+    volume: 19
+    issue: 1
+    article: "39"
+    doi: "10.1186/s13011-024-00621-x"
+
+  - authors: "Plonski, P. E., Vassileva, J., Shahidi, R., Perrin, P. B., Carter, W., Goetz, L. L., Brochetti, A., & Bjork, J. M."
+    year: 2024
+    title: "Decision-making and management of self-care in persons with traumatic spinal cord injuries: A preliminary study"
+    journal: "Journal of Behavioral and Brain Science"
+    volume: 14
+    issue: 2
+    pages: "47–63"
+    doi: ""   # TODO: check
+
+  - authors: "Silverstein, P., Elman, C., Montoya, A., McGillivray, B., Pennington, C. R., Harrison, C. H., … & Syed, M."
+    year: 2024
+    title: "A guide for social science journal editors on easing into open science"
+    journal: "Research Integrity and Peer Review"
+    volume: 9
+    article: "2"
+    doi: ""   # TODO: check
+
+  - authors: "Berry, D. R., Wall, C., Cairo, A., Plonski, P. E., Boman, L. D., Rodriguez, K., & Brown, K. W."
+    year: 2023
+    title: "Brief mindfulness instruction predicts anonymous prosocial helping of an ostracized racial outgroup member"
+    journal: "Mindfulness"
+    volume: 14
+    pages: "378–394"
+    doi: ""   # TODO: check
+
+  - authors: "Bjork, J. M., Perrin, P. B., Plonski, P. E., Vassileva, J., & Goetz, L. L."
+    year: 2022
+    title: "Impulsivity and reduced quality of life in persons with paraplegia"
+    journal: "NeuroRehabilitation"
+    volume: 51
+    issue: 3
+    pages: "489–497"
+    doi: ""   # TODO: check
+
+  - authors: "Bjork, J. M., Reisweber, J., Burchett, J. R., Plonski, P. E., Konova, A. B., Lopez-Guzman, S., & Dismuke-Greer, C. E."
+    year: 2021
+    title: "Impulsivity and medical care utilization in veterans treated for substance use disorder"
+    journal: "Substance Use & Misuse"
+    volume: 56
+    issue: 12
+    pages: "1741–1751"
+    doi: ""   # TODO: check
+
+  - authors: "Mason, M. J., Golladay, G., Jiranek, W., Cameron, B., Silverman, J. J., Zaharakis, N. M., & Plonski, P. E."
+    year: 2016
+    title: "Depression moderates the relationship between pain and the nonmedical use of opioid medication among adult outpatients"
+    journal: "Journal of Addiction Medicine"
+    volume: 10
+    issue: 6
+    pages: "408–413"
+    doi: ""   # TODO: check
+
+chapters:
+  - authors: "Goodman, R. J., Plonski, P. E., & Savery, L. N."
+    year: 2018
+    title: "Compassion training from an Early Buddhist perspective: The neurological concomitants of the Brahmavihāras"
+    editors: "L. C. Stevens & C. C. Woodruff (Eds.)"
+    book: "The neuroscience of compassion, self-compassion, and empathy"
+    pages: "235–266"
+    publisher: "Elsevier"
+    doi: ""   # TODO: check

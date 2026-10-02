@@ -1,0 +1,53 @@
+---
+title: Home
+description: Paul E. Plonski is a Research Fellow and Part-time Visiting Assistant Professor of Psychology at Swarthmore College. He studies emotion, emotion regulation, and psychophysiology.
+updated: 2026-10-01
+wide: true
+accent:
+  image: summit
+  position: strip
+  alt: "A rocky mountain summit with a stone cairn, looking out over forested ridges and valleys under a clear blue sky."
+  caption: ""   # optional: place and season
+ai:
+  level: paul
+  tool: Claude Opus 5.5
+  sources: "Paul's earlier website, research statement, and CV"
+  reviewed: 2026-10-01
+---
+<section class="intro" aria-labelledby="intro-name">
+  <div class="intro__photo">
+    <picture>
+      <source type="image/webp" srcset="/assets/img/paul-plonski-480.webp 480w, /assets/img/paul-plonski-960.webp 960w" sizes="(max-width: 40rem) 9.5rem, 11.5rem">
+      <img src="/assets/img/paul-plonski-480.jpg" srcset="/assets/img/paul-plonski-480.jpg 480w, /assets/img/paul-plonski-960.jpg 960w" sizes="(max-width: 40rem) 9.5rem, 11.5rem" width="480" height="600" alt="Portrait of Paul Plonski, wearing glasses and a blue plaid shirt.">
+    </picture>
+  </div>
+
+  <div class="intro__text">
+    <h1 id="intro-name">{{ site.name }}</h1>
+    <p class="intro__role">{{ site.position }}<br>{{ site.department }}, {{ site.institution }}</p>
+
+    <p>I study interdisciplinary affective science and am particularly interested in 
+      the psychology of climate change. How do people respond emotionally to problems 
+      when the problems are too large and complicated to see or touch? Do the ways that
+      we manage those emotions help or hurt? I trained in mindfulness, impulsivity, and
+      emotion regulation using psychophysiological, social, and cognitive methods. 
+      My questions are increasingly bridging between affective science and environmental 
+      psychology.</p>
+
+    <p>I also teach statistics and research methods and mentor students. I particularly
+      enjoy working with students who are exploring their intellectual motivations in
+      their own studies. This fall I'm teaching a research practicum in emotion 
+      regulation and we are conducting an EEG study to probe emotional and motivational 
+      signals in the late positive potential.</p>
+
+    <p>There's more about my <a href="/research/">research</a> and <a href="/teaching/">teaching</a> on this site, along with a list of <a href="/publications/">publications</a> and a few open <a href="/resources/">resources</a>.</p>
+
+    <ul class="link-line" aria-label="Profiles and contact">
+      <li><a href="{{ site.links.cv }}">CV (PDF)</a></li>
+      <li><a href="{{ site.links.scholar }}">Google Scholar</a></li>
+      <li><a href="{{ site.links.orcid }}">ORCID</a></li>
+      <li><a href="{{ site.links.osf }}">OSF</a></li>
+      <li><a href="mailto:{{ site.email.primary or site.email.institutional }}">Email</a></li>
+    </ul>
+  </div>
+</section>

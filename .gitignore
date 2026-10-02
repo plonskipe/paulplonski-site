@@ -1,0 +1,21 @@
+# Dependencies and build output
+node_modules/
+_site/
+.wrangler/
+.dev.vars
+.env
+.env.*
+
+# Private working materials: never commit these (public repo)
+CLAUDE.md
+_working/
+planning/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Working checklists
+TODAY.md

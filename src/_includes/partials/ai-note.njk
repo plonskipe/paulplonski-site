@@ -1,0 +1,6 @@
+{#- Per-page "How this page was made" note, shown as the first line of the site footer.
+    Required by TRANSPARENCY_GUIDE.md. Reads the page's `ai` frontmatter block; the
+    `aiSummary` filter builds the sentence. -#}
+{%- if ai and not aiExempt %}
+<p class="site-footer__ai"><span class="site-footer__ai-label">How this page was made.</span> {{ ai | aiSummary | safe }}{% if updated %} Last updated <time datetime="{{ updated | isoDate }}">{{ updated | isoDate }}</time>.{% endif %} <a href="/about-this-site/">About AI use on this site</a></p>
+{%- endif %}

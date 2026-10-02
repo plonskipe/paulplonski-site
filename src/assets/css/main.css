@@ -1,0 +1,351 @@
+/* paulplonski.com — main stylesheet
+   Drafted by Claude (Opus 5.5), 2026-10-01; revised the same day for a plainer, warmer look.
+   One fixed light theme for everyone: warm paper, brown ink, green-blue links.
+   Design rules (see CLAUDE.md): no cards, no pill buttons, no gradients, no drop shadows,
+   no dark mode. Photos are accents, not centerpieces. */
+
+/* ---------- Fonts (self-hosted Noto Sans, variable weight) ---------- */
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/fonts/noto-sans/noto-sans-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/fonts/noto-sans/noto-sans-latin-ext-wght-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+    U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Noto Sans";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/fonts/noto-sans/noto-sans-latin-wght-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Noto Sans";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/assets/fonts/noto-sans/noto-sans-latin-ext-wght-italic.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+    U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ---------- Tokens ---------- */
+:root {
+  color-scheme: light;
+
+  --paper: #f4efe4;       /* warm off-white */
+  --paper-2: #ebe3d2;     /* deeper cream, for quiet panels */
+  --ink: #2b2420;         /* warm near-black */
+  --muted: #5f554b;
+  --rule: #d6cbb7;
+
+  --link: #2e5a4c;        /* deep green */
+  --teal: #2e5e5a;        /* header bar */
+  --teal-text: #f4efe4;
+  --teal-muted: #d7e6df;
+  --teal-mark: #e3cc9c;   /* current-page underline */
+  --link-hover: #7a4a26;  /* bark */
+  --brown: #6b4a2f;
+  --soil: #3b2a1e;        /* footer */
+  --soil-text: #efe6d6;
+  --soil-muted: #cdbfa8;
+  --soil-link: #d9e8c9;
+
+  --draft-bg: #ecdcb8;
+  --draft-text: #4a3517;
+
+  --font: "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --measure: 40rem;
+  --wide: 54rem;
+  --gutter: clamp(1rem, 0.5rem + 2vw, 2rem);
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+a:hover { color: var(--link-hover); }
+a:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+h1, h2, h3 {
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--ink);
+}
+h1 { font-size: clamp(1.75rem, 1.45rem + 1.2vw, 2.2rem); margin: 0 0 0.6em; }
+h2 { font-size: 1.25rem; margin: 2.2em 0 0.5em; color: var(--brown); }
+h3 { font-size: 1.05rem; margin: 1.6em 0 0.35em; }
+
+p, ul, ol { margin: 0 0 1em; }
+li + li { margin-top: 0.3em; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0;
+}
+
+code {
+  font-size: 0.9em;
+  background: var(--paper-2);
+  padding: 0.05em 0.3em;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.wrap--wide { max-width: var(--wide); }
+
+.lead { font-size: 1.12rem; }
+
+/* ---------- Skip link ---------- */
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  padding: 0.4rem 0.8rem;
+  background: var(--paper);
+  color: var(--link);
+  border: 1px solid var(--link);
+  z-index: 10;
+}
+.skip-link:focus { top: 0.75rem; }
+
+/* ---------- Header ---------- */
+.site-header { background: var(--teal); }
+.site-header__inner {
+  max-width: var(--wide);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem 1.5rem;
+  padding-block: 1.1rem 0.9rem;
+}
+.brand {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--teal-text);
+  text-decoration: none;
+}
+.brand:hover { color: var(--teal-text); text-decoration: underline; }
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.1rem;
+  font-size: 0.98rem;
+}
+.nav li + li { margin-top: 0; }
+.nav a { color: var(--teal-muted); text-decoration: none; }
+.nav a:hover { color: var(--teal-text); text-decoration: underline; }
+.nav a[aria-current="page"] {
+  color: var(--teal-text);
+  text-decoration: underline;
+  text-decoration-color: var(--teal-mark);
+  text-decoration-thickness: 2px;
+}
+.site-header a:focus-visible { outline-color: var(--teal-text); }
+
+/* ---------- Draft banner (dev only; drafts never ship) ---------- */
+.draft-banner {
+  background: var(--draft-bg);
+  color: var(--draft-text);
+  font-size: 0.88rem;
+  padding-block: 0.5rem;
+}
+.draft-banner .wrap { max-width: var(--wide); }
+
+/* ---------- Main ---------- */
+main {
+  flex: 1 0 auto;      /* keeps the footer at the bottom on short pages */
+  width: 100%;
+  padding-block: clamp(2rem, 1.4rem + 2.5vw, 3.25rem) 2rem;
+}
+main > :first-child { margin-top: 0; }
+
+/* ---------- Home ---------- */
+.intro {
+  display: grid;
+  grid-template-columns: 11.5rem minmax(0, 1fr);
+  gap: clamp(1.25rem, 0.75rem + 2.5vw, 2.5rem);
+  align-items: start;
+}
+.intro__photo img {
+  width: 100%;
+  border: 1px solid var(--rule);
+}
+.intro h1 { margin-bottom: 0.2em; }
+.intro__role {
+  color: var(--muted);
+  margin-bottom: 1.4em;
+  line-height: 1.5;
+}
+
+/* Profile links as a plain line of text: CV · Google Scholar · ORCID · ... */
+.link-line {
+  list-style: none;
+  padding: 0;
+  margin: 1.4rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0;
+}
+.link-line li + li { margin-top: 0; }
+.link-line li + li::before {
+  content: "·";
+  color: var(--muted);
+  padding-inline: 0.55em;
+}
+
+/* ---------- Accent photos (from frontmatter `accent`) ---------- */
+.accent { margin: 0; }
+.accent img { width: 100%; }
+.accent figcaption {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
+/* Small photo floated beside the opening text. */
+.accent--side {
+  float: right;
+  width: min(13rem, 38%);
+  margin: 0.35rem 0 1.25rem 1.75rem;
+}
+.accent--side img { aspect-ratio: 4 / 5; object-fit: cover; }
+/* Thin panoramic band at the end of the page. */
+.accent--strip { clear: both; margin-top: 3rem; }
+.accent--strip img { aspect-ratio: 4 / 1; object-fit: cover; }
+
+/* ---------- Publications ---------- */
+.pubs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pubs li {
+  padding-left: 1.75rem;
+  text-indent: -1.75rem;
+  margin: 0 0 1.05rem;
+}
+.pubs li + li { margin-top: 0; }
+.pubs .doi { white-space: nowrap; }
+.pubs-note { color: var(--muted); }
+
+/* ---------- Lists of courses, etc. ---------- */
+.plain-list { list-style: none; padding: 0; }
+.plain-list li {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--rule);
+  margin: 0;
+}
+.plain-list li:first-child { border-top: 1px solid var(--rule); }
+.plain-list .meta { color: var(--muted); font-size: 0.95rem; }
+
+/* ---------- Callout (e.g., the lab manual link) ---------- */
+.callout {
+  border-left: 3px solid var(--brown);
+  padding: 0.2rem 0 0.2rem 1rem;
+  margin: 1.25rem 0;
+}
+.callout > :last-child { margin-bottom: 0; }
+
+/* ---------- Tables (About page) ---------- */
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 0.95rem; margin: 0 0 1.25rem; }
+th, td { text-align: left; vertical-align: top; padding: 0.5rem 0.7rem 0.5rem 0; border-bottom: 1px solid var(--rule); }
+th { font-weight: 600; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--soil);
+  color: var(--soil-muted);
+  font-size: 0.9rem;
+}
+.site-footer a { color: var(--soil-link); }
+.site-footer a:hover { color: var(--soil-text); }
+.site-footer__inner {
+  max-width: var(--wide);
+  padding-block: 1.75rem 2.25rem;
+}
+.site-footer p { margin: 0 0 0.6rem; }
+/* This page's AI note: first line of the footer, set off by a thin rule. */
+.site-footer .site-footer__ai {
+  font-size: 0.86rem;
+  padding-bottom: 0.9rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgb(239 230 214 / 0.18);
+}
+.site-footer__ai-label { font-weight: 600; color: var(--soil-text); }
+.site-footer__small { font-size: 0.84rem; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 40rem) {
+  body { font-size: 1rem; }
+  .intro { grid-template-columns: 1fr; }
+  .intro__photo { max-width: 9.5rem; }
+  .site-header__inner { flex-direction: column; align-items: flex-start; }
+  /* On phones the side photo becomes a thin band above the text, so it stays an accent. */
+  .accent--side { float: none; width: 100%; margin: 0 0 1.5rem; }
+  .accent--side img { aspect-ratio: 5 / 2; }
+  .accent--strip img { aspect-ratio: 3 / 1; }  /* a little taller on phones; trims the sides */
+}
+
+/* ---------- Print ---------- */
+@media print {
+  .site-header, .skip-link, .draft-banner, .accent { display: none; }
+  body { background: #fff; color: #000; }
+  .site-footer { background: none; color: #000; }
+  a { color: inherit; }
+}

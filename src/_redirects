@@ -1,0 +1,6 @@
+# Cloudflare Workers static-asset redirects: [source] [destination] [code]
+# https://developers.cloudflare.com/workers/static-assets/redirects/
+# Hostname redirects (www -> apex) can't go here; that's a Redirect Rule in the dashboard.
+
+/cv     /assets/files/plonski_CV.pdf   302
+/cv/    /assets/files/plonski_CV.pdf   302

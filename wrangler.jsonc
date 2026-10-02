@@ -1,0 +1,22 @@
+// Cloudflare Workers config for paulplonski.com: static assets only, no Worker script.
+// Paul runs all wrangler commands. See TODAY.md for the order of steps.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "paulplonski-site",
+  "compatibility_date": "2026-09-25",
+  "assets": {
+    "directory": "./_site",
+    "not_found_handling": "404-page"
+  },
+
+  // Preview URL: https://paulplonski-site.<your-account-subdomain>.workers.dev
+  // Turn this off (false) once paulplonski.com is working, so there's one public address.
+  "workers_dev": true
+
+  // STEP 2 in TODAY.md: after deleting the old Squarespace A records for paulplonski.com,
+  // replace the line above with the two lines below (note the comma after true), then
+  // run `npm run deploy` again. Cloudflare creates the DNS record and certificate itself.
+  //
+  // "workers_dev": true,
+  // "routes": [{ "pattern": "paulplonski.com", "custom_domain": true }]
+}

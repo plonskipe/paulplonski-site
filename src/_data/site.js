@@ -35,7 +35,7 @@ export default {
 
   // Cloudflare Web Analytics token (dashboard > Analytics & Logs > Web Analytics).
   // Leave empty to load no analytics script.
-  analyticsToken: "",
+  analyticsToken: "b51ef2cd1f924f969ba227d39fe27b55",
 
   nav: [
     { label: "Research", url: "/research/" },
